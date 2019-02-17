@@ -1,0 +1,658 @@
+@import "variables";
+.br {
+    background: $white;
+    color: black;
+    font-family: $main-font;
+    font-size: 20px;
+    font-weight: 600;
+    overflow-x: hidden;
+    .row > div {
+        //border: 1px solid #000;
+    }
+    header {
+        background: $logo-color;
+        border-bottom: 3px solid $accent-color;
+        color: $white;
+        display: flex;
+        height: 140px;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        z-index: 12;
+        @media (max-width: $mobile-breakpoint) {
+            background: $black;
+            color: $white;
+        }
+    }
+    a {
+        color: orange;
+        cursor: pointer;
+        &:hover {
+            color: $link-hover;
+            transition: color .4s linear;
+            text-decoration: none;
+        }
+    }
+    .content {
+        position: relative;
+        z-index: 10;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: black;
+        margin-bottom: 20px;
+        font-family: $main-font;
+        font-weight: $header-weight;
+    }
+    h1 {
+        font-size: $h1-font-size;
+        margin-top: 150px;
+    }
+    p {
+        font-weight: 400;
+    }
+    img {
+        transition: opacity 1s linear;
+
+        &:not(.bmw-mobile):not(.chlora-mobile) {
+            background: white;
+            padding: 5px;
+            border: 2px solid $accent-color;
+        }
+        &.show {
+            opacity: 1;
+        }
+    }
+    .container {
+        @media (min-width: 1200px) {
+            max-width: 1240px;
+        }
+    }
+    .nav {
+        //background: $black;
+        color: white;
+        list-style-type: none;
+        font-weight: 600;
+        height: 40px;
+        margin: 30px 0;
+        padding: 10px 20px 0 0;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 2;
+        @media (max-width: $mobile-breakpoint) {
+            margin-top: 10px;
+        }
+        li {
+            float: left;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        a {
+            color: white;
+            &:hover {
+                color: $link-hover;
+                transition: color .5s linear;
+            }
+        }
+    }
+    .logo-bg {
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-left: 200px solid $logo-bg-color;
+        border-bottom: 50px solid transparent;
+        position: absolute;
+        z-index: 1;
+        @media (max-width: $mobile-breakpoint) {
+            display: none;
+        }
+    }
+    .nav-bg {
+        width: 0;
+        height: 0;
+        border-top: 50px solid transparent;
+        border-left: 700px solid $navbar-bg-color;
+        border-bottom: 150px solid transparent;
+        position: absolute;
+        transform: rotate(180deg);
+        right: 0;
+        top: -100px;
+        z-index: 1;
+    }
+    // Section Backgrounds
+    .bg {
+        background-size: cover;
+        height: 100vh;
+        opacity: 0;
+        position: fixed;
+        transition: opacity 1s linear;
+        width: 100%;
+        &.show {
+            opacity: 1;
+        }
+    }
+    .hero-bg {
+        background: url('./../img/forest.jpg') #666;
+        opacity: 1;
+        z-index: 1;
+    }
+    .graphic-bg {
+        background-size: cover;
+        background: url('./../img/coney-island2.jpg') no-repeat;
+        z-index: 2;
+    }
+    .development-bg {
+        background: #666;
+        display: flex;
+        justify-content: center;
+        z-index: 3;
+        div {
+            align-self: center;
+            border-radius: 0px;
+            display: block;
+            height: 0px;
+            width: 0px;
+            position: absolute;
+            @for $i from 1 through 10 {
+                &:nth-child(#{$i}) {
+                    background: mix($bands-color1, $bands-color2, nth($percentages, $i));
+                }
+            }
+        }
+        &.expand {
+            div {
+                transition: width 1s;
+                height: 100%;
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        width: nth($percentages, $i);
+                        transition: all $i * 0.25s;
+                        z-index: $i;
+                    }
+                }
+            }
+        }
+        &.blue {
+            transition: background 1s;
+            div {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        background: mix($bands-color7, $bands-color8, nth($percentages, $i));
+                        transform: rotate(0deg);
+                        transition: all $i * 0.25s;
+                    }
+                }
+            }
+        }
+        &.gold {
+            transition: background 1s;
+            div {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        background: mix($bands-color3, $bands-color4, nth($percentages, $i));
+                        transform: rotate(0deg);
+                        transition: all $i * 0.25s;
+                    }
+                }
+            }
+        }
+        &.grey {
+            transition: background 1s;
+            div {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        background: mix($bands-color9, $bands-color10, nth($percentages, $i));
+                        transform: rotate(0deg);
+                        transition: all $i * 0.25s;
+                    }
+                }
+            }
+        }
+        &.rotate {
+            transition: transform 1s;
+            div {
+                @for $i from 1 through 10 {
+                    &:nth-child(#{$i}) {
+                        background: mix($bands-color5, $bands-color6, nth($percentages, $i));
+                        transform: rotate(90deg) scaleY(2);
+                        transition: all $i * 0.25s;
+                    }
+                }
+            }
+        }
+    }
+    .image-row {
+        margin-top: 100px;
+        transform: skew(-5deg) rotate(-5deg);
+        .row {
+            &.first {
+                >div {
+                    //border: 1px solid red;
+                    height: 300px;
+
+                    &:first-child {
+                        background: url('./../img/kbs/ludens.jpg');
+                        background-size: cover;
+                    }
+                    &:nth-child(2) {
+                        background: url('./../img/saatchi.png') no-repeat;
+                        background-size: 80%;
+                        background-position: center;
+                    }
+                    &:nth-child(3) {
+                        background: url('./../img/kbs/chloraseptic.png');
+                        background-size: cover;
+                    }
+                }
+            }
+
+            &.second {
+                >div {
+                    //border: 1px solid red;
+                    height: 300px;
+                    
+                    &:first-child {
+                        background: url('./../img/kbs/mk-screenshot.jpg');
+                        background-size: cover;
+                    }
+                    &:nth-child(2) {
+                        background: url('./../img/docero/docero-screen.jpg');
+                        background-size: cover;
+                    }
+                    &:nth-child(3) {
+                        background: url('./../img/graphic/aphrodesia.jpg');
+                        background-size: cover;
+                    }
+                }
+
+            }
+        }
+    }
+    .contact-bg {
+        background: url('./../img/contact-bg.jpg') no-repeat;
+        z-index: 3;
+    }
+    .diagonal-box {
+        background: url('../img/trees.jpg');
+        height: 2000px;
+        mix-blend-mode: overlay;
+        opacity: 0;
+        position: absolute;
+        transform: scale(4);
+        width: 50%;
+        z-index: 4;
+        &.animate {
+            left: -20%;
+            opacity: 1;
+            transition: transform 1s ease-out, opacity 1s ease-out;
+            transform: scale(1);
+        }
+        &.hide {
+            opacity: 0;
+        }
+        &.show {
+            opacity: 1;
+        }
+    }
+    section {
+        height: 900px;
+        &:after {
+            content: '';
+            display: block;
+            background: $accent-color;
+            height: 1px;
+            width: 100%;
+        }
+        @media (max-width: $mobile-breakpoint) {
+            height: auto;
+            min-height: 800px;
+        }
+    }
+    .animations {
+        bottom: 50px;
+        cursor: pointer;
+        list-style-type: none;
+        padding: 5px 20px;
+        position: fixed;
+        right: 50px;
+        z-index: 2;
+    }
+    .logo {
+        //font-family: $hero-font;
+        font-size: $logo-font-size;
+        //line-height: 30px;
+        margin: 20px 0 0 20px;
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        span {
+            font-family: $main-font;
+            font-size: $tagline-font-size;
+            font-weight: 200;
+            margin-top: -15px;
+            display: block;
+            text-transform: capitalize;
+            @media (max-width: $mobile-breakpoint) {
+                font-size: 20px;
+                line-height: 20px;
+                font-weight: 800;
+            }
+        }
+    }
+    .hello {
+        padding-top: 50px;
+        color: black;
+        vertical-align: bottom;
+        @media (min-width: $mobile-breakpoint) {
+            padding-top: 200px;
+        }
+        ul {
+            border: 1px solid #fff;
+            list-style-type: none;
+            max-width: 60%;
+            margin-top: 140px;
+            padding-left: 20px;
+            &.border {
+                border: 1px solid #fff;
+                transition: opacity 1s linear;
+            }
+            @media (min-width: $mobile-breakpoint) {
+                margin-top: 290px;
+            }
+            li {
+                display: inline;
+                opacity: 0;
+                transition: opacity 1s linear;
+                &.active {
+                    opacity: 1;
+                }
+                &:nth-child(2) {
+                    font-size: 1.5em;
+                    @media (min-width: $midpoint-breakpoint) {
+                        line-height: 20px;
+                    }
+                }
+                &:nth-child(4) {
+                    font-size: 1.4em;
+                    @media (min-width: $midpoint-breakpoint) {
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        .bmw-mobile,
+        .chlora-mobile {
+            position: absolute;
+            width: 450px;
+        }
+        .bmw-mobile {
+            left: 0;
+            z-index: 2;
+        }
+        .chlora-mobile {
+            right: 0;
+            top: 80px;
+            z-index: 1;
+        }
+    }
+    .ux {
+
+        @keyframes moveout {
+          from {opacity: 1; left: 0px;}
+          to {opacity: 0; left: -2500px;}
+        }
+
+        @keyframes movein {
+            from {opacity: 0; left: -2500px;}
+            to {opacity: 1; left: 0px;}
+          
+        }
+
+        padding-top: 150px;
+
+        .container {
+            position: relative;
+        }
+
+        .puma {
+            //opacity: 0;
+            width: 500px;
+            position: absolute;
+
+            &.show {
+                opacity: 1;
+            }
+        }
+
+        .panel {
+            transition: opacity 1s linear;
+            left: -2500px;
+            position: absolute;
+            
+            &.moveout {
+                animation: moveout 1s forwards;
+                animation-iteration-count: 1;
+            }
+            &.movein {
+                animation: movein 0.5s forwards;
+                animation-iteration-count: 1;
+            }
+        }
+
+        .opener {
+            position: absolute;
+            z-index: 2;
+            left: 0;
+        }
+
+        .puma-sketch {
+            
+            
+
+            .puma {
+                width: 90%;
+            }
+        }
+
+        .case-nav {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        a {
+            color: $accent-color;
+
+            &:hover {
+                color: $hover-color;
+            }
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+    .graphic {
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+        h1 {
+            filter: blur(10px);
+            margin-left: -100%;
+        }
+        .overlay {
+            background-blend-mode: color-dodge;
+            background: lightblue;
+            display: block;
+            height: 100%;
+            opacity: .5;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+        .corkboard {
+            position: absolute;
+            z-index: 2;
+        }
+        img {
+            margin: 7px 3px;
+            &:hover {
+                opacity: 1;
+                outline: 3px solid #fff;
+                transition: .7s opacity;
+                z-index: 2;
+            }
+        }
+        .diagonal-box {
+            background: url('../img/diagonal.png');
+            height: 2500px;
+            mix-blend-mode: color-burn;
+            opacity: 0;
+            position: absolute;
+            transform: scale(4);
+            width: 200%;
+        }
+        &.animate {
+            h1 {
+                filter: blur(0px);
+                margin-left: 0;
+                transition: filter 1s ease-in, margin-left .7s ease-in;
+            }
+        }
+        @media (max-width: $mobile-breakpoint) {
+            img {
+                width: 80px;
+            }
+        }
+    } // end of graphic rule
+    .development {
+        color: black;
+        overflow: hidden;
+        position: relative;
+        .row {
+            &:nth-child(2),
+            &:nth-child(3) {
+                display: none;
+            }
+        }
+        .development-nav {
+            display: flex;
+            font-size: 5em;
+            justify-content: center;
+            margin-top: 50px;
+            ul {
+                display: flex;
+                list-style: none;
+            }
+            div {
+                background: white;
+                display: block;
+                border-radius: 20px;
+                margin: 0 10px;
+                height: 20px;
+                width: 20px;
+            }
+        }
+        h1 {
+            color: black;
+            margin-top: 75px;
+        }
+        .row {
+            padding-top: 180px;
+        }
+        .laptop {
+            background: url('../img/computer.png') no-repeat;
+            background-position: 6px center;
+            background-size: 100%;
+            height: 378px;
+            padding-top: 20px;
+            position: absolute;
+            text-align: center;
+            width: 100%;
+
+            .screen {
+                border-radius: 8px;
+                display: block;
+                height: 80%;
+                margin: 0 auto;
+                overflow: hidden;
+                width: 76%;
+                position: relative;
+                @media (max-width: $desktop-breakpoint) {
+                    margin-top: 45px;
+                    height: 60%;
+                }
+                @media (max-width: $midpoint-breakpoint) {
+                    margin-top: 75px;
+                    height: 45%;
+                }
+                @media (max-width: $mobile-breakpoint) {
+                    margin-top: 25px;
+                    height: 65%;
+                }
+                .strip {
+                    background: url('../img/develop/image-strip.jpg') repeat;
+                    //border: 1px solid blue;
+                    display: block;
+                    width: 6000px;
+                    height: 300px;
+                    position: absolute;
+                    @media (max-width: $desktop-breakpoint) {
+                        background-size: 38%;
+                    }
+                }
+            }
+        }
+    }
+
+    /* End Development Section */
+
+    .motion {
+        .vidbox {
+            margin-top: 30px;
+            video {
+                width: 100%;
+            }
+        }
+        .programs {
+            list-style-type: none;
+            margin-top: 360px;
+            li {
+                clear: both;
+                margin-top: 20px;
+                position: relative;
+                min-height: 120px;
+            }
+            h4 {
+                font-family: "Raleway", sans-serif;
+                font-weight: 600;
+                text-transform: none;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+            img {
+                float: left;
+                width: 80px;
+                margin-right: 20px;
+                overflow: hidden;
+            }
+            p {
+                overflow: hidden;
+            }
+        }
+    }
+    .contact {
+        p {
+            font-size: 1.5em;
+            a {
+                color: green;
+            }
+        }
+    }
+    //Styles for the development page
+    .develop-page {
+        background: darkgrey;
+        height: 3000px;
+    }
+}
