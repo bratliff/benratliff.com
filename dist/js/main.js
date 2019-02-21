@@ -58,7 +58,10 @@ $(document).ready(function(){
                 bit_two.swapImages($('.puma-sketch'), $('.opener'));
             });
             $('.panel-btn').click(function(){
-                alert($(this).data('target'));
+                var targetstring = '" +'
+                var target = document.getElementsByClassName('puma-wireframe')[0];
+                console.dir(target);
+                bit_two.swapImages($('.puma-sketch'), target);
             });
         },
         webscroll : function() {
