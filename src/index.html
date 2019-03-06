@@ -21,12 +21,11 @@
         <ul class="nav">
             <li><a href="#hello" tabindex="0">Hello</a></li>
             <li><a href="#ux" tabindex="0">Philosophy</a></li>
-            <li><a href="#development" tabindex="0">Projects</a></li>
-            <li><a href="#graphic" tabindex="0">Graphic</a></li>
+            <li><a href="#development" tabindex="0">Previous Work</a></li>
             <li><a href="#contact" tabindex="0">Contact</a></li>
         </ul>
         <div class="logo-bg"></div>
-        <div class="nav-bg"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="longarrow" viewBox="0 0 560 178"><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><polygon points="0 131 560 0 560 178 0 131" /></g></g></svg>
     </header>
     <div class="content">
         <!-- hero section -->
@@ -37,6 +36,7 @@
                         <h1>Hello</h1>
                         <p>
                             I am a UX Designer and Front-End Developer with extensive experience making web things. In my various roles, I have always sought clean and elegant solutions to user-interface challenges. In whatever capacity I’m in, I seek to make user experiences that are intuitive, accessible and beautiful.</p>
+                        <p>I follow trends in web-based design and development and have watched as web sites have gone from a page of hyperlinks to full-fledged applications.  No matter what technology is employed in service of making web sites, I always consider the user first. 
                     </div>
                     <div class="col-sm-12 col-md-6">
                         <img src="img/kbs/iphone-bmw.png" class="bmw-mobile" alt="bmw mobile">
@@ -44,19 +44,28 @@
                     </div>
                 </div>
         </section>
+
+        <div class="container-fluid image-row">
+            <div class="row second">
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+
         <section class="ux">
             <div class="container">
                 <!-- first panel -->
 
                 <div class="opener panel">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-5 ux-text">
                             <h1>UX Design Philosophy</h1>
                             <p>Every project presents its own set of challenges. There is no one-size-fits-all approach to good user experience. There are, however, fundamentals of UX that have developed over the time that digital consumers have come to expect. In my time in the industry, I have developed an understanding of those expectations. It has been interesting to see the UX field expand in tandem with the capabilities of today's front-end technologies, but designers and developers should never sacrfice usability in favor of the latest technical gewgaw.</p>
-                            <a class="view-projects">View Case Study ></a>
+                            <a class="view-projects" data-target="puma-sketch">View Case Study &#8594;</a>
                         </div>
-                        <div class="col-sm-12 col-md-6">
-                            <img src="img/puma-shot.png" alt="Puma Controller" class="puma">
+                        <div class="col-sm-12 col-md-7 align-self-middle">
+                            <img src="img/puma-wall-shot.jpg" alt="Puma Controller" class="puma">
                         </div>
                     </div>
                 </div>
@@ -65,15 +74,16 @@
 
                 <div class="puma-sketch panel">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-4 ux-text">
                             <h1>Puma Wall Controller</h1>
                             <p>The Puma Wall controller was a microsite on an iPad that was supposed to look and feel like an iOS native app. The project's challenge was to create a web-based interface with drag-and-drop functionality that would be used to control a wall of iPads programmed to play different games.</p>
                             <div class="case-nav">
-                                <div><a class="ux-return">Return to UX</a></div>
-                                <div><a class="panel-btn" data-target="puma-wireframe">></a></div>
+                                <div><a class="ux-return panel-btn" data-target="opener">&#8592; Return to UX</a></div>
+                                <div><a class="panel-btn" data-target="puma-wireframe">&#8594;</a></div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-8">
+                             <img src="img/puma-sketch.jpg" class="puma-sketch" alt="Puma Sketch">
                         </div>
                     </div>
                 </div>
@@ -82,18 +92,41 @@
 
                 <div class="puma-wireframe panel">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <h1>Puma Wall Wireframe</h1>
-                            <p>Developed actual controller.</p>
+                        <div class="col-sm-12 col-md-4 ux-text">
+                            <h1>Puma Controller Wireframe</h1>
+                            <p>We designed the app to employ the JQuery UI library to create the draggable and droppable aspects of the interface. The manager would be able to add the games she wanted, drag the boxes to set the order of play, use the draggable panels to set the duration of each game, and drag the bracket to immediately change the game currently playing. She would also have the option of infinite play for a game.</p>
                             <div class="case-nav">
-                                <div><a class="ux-return">Return to UX</a></div>
-                                <div><a><</a>&nbsp;<a href="">></a></div>
+                                <div><a class="ux-return panel-btn" data-target="opener">&#8592; Return to UX</a></div>
+                                <div><a class="panel-btn" data-target="puma-sketch">&#8592;</a>&nbsp;<a class="panel-btn" data-target="puma-program">&#8594;</a></div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-8">
+                            <img src="img/puma-ux.jpg" class="puma-ux" alt="Puma UX Design">
                         </div>
                     </div>
                 </div>
+
+
+                <!-- 4th panel -->
+
+                <div class="puma-program panel">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4 ux-text">
+                            <h1>Puma Controller Product</h1>
+                            <p>The completed site was wrapped in iOS wrapper to make it look like a native app on an iPad.</p>
+                            <p>Explore the drag and drop interface! &#8594;</p>
+                            <div class="case-nav">
+                                <div><a class="ux-return panel-btn" data-target="opener">&#8592; Return to UX</a></div>
+                                <div><a class="panel-btn" data-target="puma-wireframe">&#8592;</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <iframe src="http://www.2bitcreative.com/puma" class="puma-iframe"></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+
             </div>
         </section>
 
@@ -107,141 +140,150 @@
         <!-- development section -->
         <section class="development">
             <div class="container">
-                <!-- first panel in projects -->
 
+                <!-- first panel in projects -->
+                <div class="prevwork panel">
                     <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <h1>Projects</h1>
-                        <p>As a small business and as an employee of some excellent companies, I've had the pleasure of working with great clients on great projects. If there is one thing for certain, it's that every client is unique and therefore demands a unique approach to acheiving their goals.</p>
+                        <div class="col-sm-12 col-md-4">
+                            <h1>Previous Work</h1>
+                            <p>As the owner of my own web design company and as an employee of some excellent organizations, I've had the pleasure of working with great clients on great projects. If there is one thing for certain, it's that every client is unique and therefore demands a unique approach to acheiving their goals.</p>
+                            <p>
+                                <h4><a class="panel-btn" data-target="amplify">Amplify &there4;</a></h4>
+                                <h4><a class="panel-btn" data-target="kbs">KBS &there4;</a></h4>
+                            </p>
+                        </div>
+                        <div class="col-sm-12 col-md-8">
+                            <img src="img/companies.png" class="companies" alt="companies I've worked for">
+                        </div>
                     </div>
-                    <div class="col-sm-12 col-md-6">
-                        <div class="laptop">
-                            <div class="screen">
-                                <div class="strip">
-                                </div>
+                </div>
+
+                <!-- 2nd panel in projects -->
+                <div class="panel amplify">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5 col">
+                            <h1>Amplify</h1>
+                            <div class="subpanel">
+                                <h3>Design System</h3>
+                                <p>I worked on the design team creating a pattern library of styles and components to be used in all of the company's various products. Created web components using CSS, Javascript and Vue that had built-in fuctionality reflecting accessibility conerns.</p>
+                            </div>
+                            <div class="subpanel">
+                                <h3>Administration Panel</h3>
+                                <p>Created prototypes of user interface interactions for the company admininstration panel. Researched ways in which to present a large amount of information in an intuitive and usable way. Created CSS transitions to enhance the user interface of the product.</p>
+                            </div>
+                            <div class="subpanel">
+                                <h3>Benchmark Reports</h3>
+                                <p>Created layouts and developed interfaces of mCLASS Dibels reporting tool, using HTML, CSS and Javascript. Worked closely with designers to address usability concerns.<br /><br /></p>
+                            </div>
+                            <div class="subpanel-nav">
+                                <div class="dot" data-panel="amplify"></div>
+                                <div class="dot" data-panel="amplify"></div>
+                                <div class="dot" data-panel="amplify"></div>
+                            </div>
+                            <div class="case-nav">
+                                <div><a class="panel-btn" data-target="prevwork">&#8592; Return to Projects</a></div>
+                                <div></div>
                             </div>
                         </div>
+                        <div class="col-sm-12 col-md-7 project-images">
+                           <img src="img/amplify/toolkit.png" alt="design system" class="amplify-toolkit">
+                           <img src="img/amplify/vamp.png" alt="administration" class="amplify-admin">
+                           <img src="img/amplify/mclass.png" alt="benchmark" class="mclass">
+                        </div>
                     </div>
                 </div>
 
+                <!-- 3rd panel in projects -->
+
+                <div class="panel kbs">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5 col">
+                            <h1>KBS</h1>
+                            <div class="subpanel">
+                                <h3>Clearly Better Diesel</h3>
+                                <p>Developed user experience and created site for Audi / BMW / Mercedes Benz / VW touting their "clean diesel" engines.  The site had a number of interactive elements to engage users and deliver information in an entertaining way.</p>
+                                <p><a href="http://www.2bitcreative.com/diesel" target="sites">Clearly Better Diesel ></a></p>
+                            </div>
+                            <div class="subpanel">
+                                <h3>Luden's / Chloraseptic</h3>
+                                <p>Created design elements for two of Prestige brand's signature products. Built fully responsive sites with elements like the "flu tracker" to assess flu risk in a user's location. Also created UX document prototyping the sites' navigation.</p>
+                                <div class="sites">
+                                    <a href="http://www.ludens.com" target="sites">Visit Ludens ></a><br />
+                                    <a href="http://www.chloraseptic.com" target="sites">Visit Chloraseptic ></a><br />
+                                </div>
+                            </div>
+                            <div class="subpanel">
+                                <h3>Minaj a Moi - Minajesty</h3>
+                                <p>Designed and implemented gallery of Minajified selfies by users for a site advertising "Minajesty" -- Nicki Minaj's perfume brand. A Flash application allowed visitors to use their computer camera to take their own picture and add Minaj elements like pink hair. Also developed the site's navigation.</p>
+                            </div>
+                            <div class="subpanel-nav">
+                                <div class="dot" data-panel="kbs"></div>
+                                <div class="dot" data-panel="kbs"></div>
+                                <div class="dot" data-panel="kbs"></div>
+                            </div>
+                            <div class="case-nav">
+                                <div><a class="panel-btn" data-target="prevwork">&#8592; Return to Projects</a></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7 project-images">
+                           <img src="img/kbs/clearly-better-700.jpg" alt="clearly better diesel" class="clearly">
+                           <img src="img/kbs/ludens-700.jpg" alt="ludens" class="ludens">
+                           <img src="img/kbs/minaj-700.jpg" alt="nicki minaj perfume" class="minaj">
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 4th panel in projects -->
+
+                <div class="panel mediabistro">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <h1>MediaBistro</h1>
+                            <p>Front-end Development and WordPress development for the media company.</p>
+
+                            <div class="case-nav">
+                                <div><a class="panel-btn" data-target="prevwork">&#8592; Return to Start</a></div>
+                                <div><a class="panel-btn" data-target="kbs">&#8592;</a>&nbsp;<a class="panel-btn" data-target="docero">&#8594;</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                           I worked on the design team developing a pattern library of styles and components for the company.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5th panel in projects -->
+
+                <div class="panel docero">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-5">
+                            <h1>Docero</h1>
+                            <p>Created multiple web sites for clients, working on designs and full-stack development of WordPress sites.</p>
+
+                            <div class="case-nav">
+                                <div><a class="panel-btn" data-target="prevwork">&#8592; Return to Start</a></div>
+                                <div><a class="panel-btn" data-target="mediabistro">&#8592;</a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                           I worked on the design team developing a pattern library of styles and components for the company.
+                        </div>
+                    </div>
+                </div>
 
              <!-- end development container-->
-                
-            </div>
-
-            
-        </section>
-
-        <div class="container-fluid image-row">
-                    <div class="row second">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4"></div>
-                        <div class="col-md-4"></div>
-                    </div>
-                </div>
-
-        <!-- graphic section -->
-        <section class="graphic">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1>Graphic Design</h1>
-                        <a href="img/graphic/afrodub.jpg" data-lightbox="image-1" data-title="Aphrodesia Flyer">
-                            <img src="img/graphic/thumbs/afrodub.gif" alt="Aphrodesia thumb">
-                        </a>
-                        <a href="img/graphic/architecture.jpg" data-lightbox="image-1" data-title="Architecture">
-                            <img src="img/graphic/thumbs/architecture.gif" alt="Architecture">
-                        </a>
-                        <a href="img/graphic/bikini.jpg" data-lightbox="image-1" data-title="Bikini">
-                            <img src="img/graphic/thumbs/bikini.gif" alt="Bikini">
-                        </a>
-                        <a href="img/graphic/cara.jpg" data-lightbox="image-1" data-title="Cara">
-                            <img src="img/graphic/thumbs/cara.gif" alt="Cara Spa">
-                        </a>
-                        <a href="img/graphic/complex.jpg" data-lightbox="image-1" data-title="Complex">
-                            <img src="img/graphic/thumbs/complex.gif" alt="The Complex">
-                        </a>
-                        <a href="img/graphic/bombs.jpg" data-lightbox="image-1" data-title="Bombs Away">
-                            <img src="img/graphic/thumbs/bombs.gif" alt="Bombs Away">
-                        </a>
-                        <a href="img/graphic/western.jpg" data-lightbox="image-1" data-title="Western">
-                            <img src="img/graphic/thumbs/western.gif" alt="Western">
-                        </a>
-                        <a href="img/graphic/minty.jpg" data-lightbox="image-1" data-title="Fresh n Minty">
-                            <img src="img/graphic/thumbs/minty.gif" alt="Fresh n Minty">
-                        </a>
-                        <a href="img/graphic/remembrance.jpg" data-lightbox="image-1" data-title="Remberance">
-                            <img src="img/graphic/thumbs/remembrance.jpg" alt="Rememberance">
-                        </a>
-                        <a href="img/graphic/kultur.jpg" data-lightbox="image-1" data-title="Kultur">
-                            <img src="img/graphic/thumbs/kultur.gif" alt="Kultur">
-                        </a>
-                        <a href="img/graphic/freefall.jpg" data-lightbox="image-1" data-title="Freefall">
-                            <img src="img/graphic/thumbs/freefall.gif" alt="Freefall">
-                        </a>
-                        <a href="img/graphic/exuberant.jpg" data-lightbox="image-1" data-title="Exuberant">
-                            <img src="img/graphic/thumbs/exuberant.gif" alt="Exuberant">
-                        </a>
-                        <a href="img/graphic/steinhoff.jpg" data-lightbox="image-1" data-title="Exuberant">
-                            <img src="img/graphic/thumbs/steinhoff.gif" alt="Stienhoff">
-                        </a>
-                        <a href="img/graphic/museum.jpg" data-lightbox="image-1" data-title="MOMA">
-                            <img src="img/graphic/thumbs/moma.gif" alt="MOMA">
-                        </a>
-                        <a href="img/graphic/squiggly.jpg" data-lightbox="image-1" data-title="Squiggly">
-                            <img src="img/graphic/thumbs/squiggly.gif" alt="Squiggly">
-                        </a>
-                        <a href="img/graphic/sleep.jpg" data-lightbox="image-1" data-title="Sleep">
-                            <img src="img/graphic/thumbs/sleep.gif" alt="Sleep">
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
-        <!-- motion section -->
-        <section class="motion">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6">
-                        <div>
-                            <h1>MOTION GRAPHICS</h1>
-                            <p>Designs are great, but even better when they get moving. 2bit uses a variety of technologies to create dynamic videos and presentations, banners and web sites.</p>
-                        </div>
-                        <div class="vidbox">
-                            <video controls poster="img/poster.gif">
-                                <source src="reel_smaller.mp4" type="video/mp4"> Your browser doesn't support HTML5 video tag.
-                            </video>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6">
-                        <ul class="programs">
-                            <li>
-                                <img src="img/video/adobe_ae.gif" alt="Adobe After Effects">
-                                <h4>Adobe After Effects</h4>
-                                <p>Adobe’s premiere video editing and special effects software is used extensively in the video (and was used to make the reel itself).</p>
-                            </li>
-                            <li>
-                                <img src="img/video/adobe_ps.gif" alt="Adobe Photoshop">
-                                <h4>Adobe Photoshop</h4>
-                                <p>The industry standard in graphics production, it’s hard to imagine life without it.</p>
-                            </li>
-                            <li>
-                                <img src="img/video/adobe_il.gif" alt="Adobe Illustrator">
-                                <h4>Adobe Illustrator</h4>
-                                <p>Adobe's main vector art program. Incredibly versatile.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!-- section 5 -->
         <section class="contact">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
-                        <h1>CONTACT</h1>
-                        <p>Please feel free to contact 2bit <a href="mailto:&#098;&#101;&#110;&#064;&#050;&#098;&#105;&#116;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#046;&#099;&#111;&#109;">here.</a>
+                        <h1>WANT TO WORK ON SOMETHING?</h1>
+                        <p>Please feel free to contact <a href="mailto:&#098;&#101;&#110;&#064;&#050;&#098;&#105;&#116;&#099;&#114;&#101;&#097;&#116;&#105;&#118;&#101;&#046;&#099;&#111;&#109;">me.</a>
                         </p>
                     </div>
                 </div>

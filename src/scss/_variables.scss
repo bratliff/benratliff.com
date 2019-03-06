@@ -19,8 +19,11 @@ $bands-color10: #959595;
 $logo-bg-color: #333;
 $logo-color: #666;
 $navbar-bg-color: #999;
-$accent-color: orange;
-$hover-color: red;
+$accent-color: #A6290D;
+$hover-color: #FF7820;
+$dots-hover: gray;
+
+$animation-duration: 0.7s;
 
 $percentages: 100%, 95%, 90%, 85%, 80%, 75%, 70%, 65%, 60%, 55%, 50%, 45%, 40%, 35%, 30%, 25%, 20%, 15%, 10%, 5%, 0%;
 
@@ -37,3 +40,5 @@ $header-weight: 500;
 $desktop-breakpoint: 1200px;
 $midpoint-breakpoint: 992px;
 $mobile-breakpoint: 768px;
+
+$slidein-left-val: 3%;
