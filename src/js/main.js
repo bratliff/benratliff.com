@@ -35,6 +35,7 @@ $(document).ready(function(){
             }
         },
         addListeners : function() {
+
             $('.nav li a').click(function(e){
                 setTimeout(function(){
                     bit_two.hashChange();
@@ -52,17 +53,31 @@ $(document).ready(function(){
             })
 
             $('.view-projects').click(function(){
-                bit_two.swapImages($('.opener'), $('.puma-sketch'));
+                bit_two.swapImages($('.ux .opener'), $('.ux .puma-sketch'));
             });
-            $('.ux-return').click(function(){
-                bit_two.swapImages($('.puma-sketch'), $('.opener'));
+
+            $('.panel-btn').click(function(e){
+                var targetname = $(e.target).data('target');
+                var target = document.getElementsByClassName(targetname)[0];
+                var currentpanel = $(e.target).parents('.panel');
+                bit_two.swapImages(currentpanel, target);
             });
-            $('.panel-btn').click(function(){
-                var targetstring = '" +'
-                var target = document.getElementsByClassName('puma-wireframe')[0];
-                console.dir(target);
-                bit_two.swapImages($('.puma-sketch'), target);
+
+            $('.subpanel-nav .dot').click(function(e){
+
+                var index = $(e.target).index();
+                var paneldata = $(e.target).data('panel');
+                var currentpanel = document.getElementsByClassName(paneldata)[0];
+
+
+                $(currentpanel).find('.subpanel').hide();
+                $(currentpanel).find('.subpanel').eq(index).show();
+
+                $(currentpanel).find('.project-images img').hide();
+                $(currentpanel).find('.project-images img').eq(index).show();
+
             });
+
         },
         webscroll : function() {
             if(!bit_two.developAnim) {
@@ -92,7 +107,7 @@ $(document).ready(function(){
                     // UX section
 
                     $('.development-bg').addClass('expand show').removeClass('grey');
-                    //$('.puma').addClass('show');
+                    $('header').addClass('transition1');
                 break;
                 case 2:
                     // Development section
