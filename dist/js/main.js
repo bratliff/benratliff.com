@@ -101,13 +101,14 @@ $(document).ready(function(){
             switch(index) {
                 case 0:
                     // Hello section
-                    
+                    $('header').removeClass('reduce').addClass('increase');
                 break;
                 case 1:
                     // UX section
+                     $('header').removeClass('increase').addClass('reduce');
 
                     $('.development-bg').addClass('expand show').removeClass('grey');
-                    $('header').addClass('transition1');
+                    $('.hello h1').addClass('active');
                 break;
                 case 2:
                     // Development section

@@ -4,44 +4,38 @@
     background: $white;
     color: black;
     font-family: $main-font;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 300;
     overflow-x: hidden;
 
     .row > div {
         //border: 1px solid #000;
     }
-    header {
-        background: $logo-color;
-        border-bottom: 3px solid $hover-color;
-        color: $white;
-        display: flex;
-        height: 140px;
-        justify-content: space-between;
-        position: fixed;
-        width: 100%;
-        z-index: 12;
-        @media (max-width: $mobile-breakpoint) {
-            background: $black;
-            color: $white;
-        }
-    }
+
     a {
         color: $accent-color;
         cursor: pointer;
+        position: relative;
+
+        &:after {
+                content:'';
+                display: block;
+                background: $hover-color;
+                height: 1px;
+                width: 0;
+                position: absolute;
+            }
 
         &:hover {
             color: $hover-color;
             transition: color .4s linear;
             text-decoration: none;
+            
+            &:after {
+                width: 100%;
+                transition: $hover-duration width ease-out;
+            }
 
-            /*&:after {
-                content: '';
-                display: block;
-                height: 1px;
-                //width: 100%;
-                background: $accent-color;
-            }*/
         }
     }
     .content {
@@ -59,10 +53,29 @@
     }
     h1 {
         font-size: $h1-font-size;
-        //margin-top: 150px;
+        
+        &:before {
+            content:'';
+            width: 12px;
+            height: 12px;
+            display: block;
+            background: $subtle-grey;
+            position: absolute;
+            top: 8px;
+            left: -10px;
+            transform: rotate(45deg);
+        }
+
+        &.active {
+
+            &:before {
+                transform: rotate(-315deg);
+                transition: $animation-duration transform ease-out;
+            }
+        }
     }
     p {
-        font-weight: 400;
+        font-weight: 300;
     }
     img {
         transition: opacity 1s linear;
@@ -93,7 +106,31 @@
     }
 
     header {
-        overflow: hidden;
+        background: white;
+        border-bottom: 1px solid $subtle-grey;
+        color: black;
+        display: flex;
+        font-family: $header-font;
+        height: $header-height;
+        justify-content: space-between;
+        position: fixed;
+        width: 100%;
+        z-index: 12;
+        
+        /*&:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 60px;
+            background: $subtle-grey;
+            height: 1px;
+            width: 220px;
+        }*/
+
+        @media (max-width: $mobile-breakpoint) {
+            background: $black;
+            color: $white;
+        }
 
         .nav {
             //border: 1px #fff solid;
@@ -112,18 +149,27 @@
                 padding: 0;
                 width: 160px;
             }
+
             li {
                 float: left;
                 margin-left: 20px;
                 cursor: pointer;
             }
+
             a {
-                color: white;
-                &:hover {
-                    color: $link-hover;
-                    transition: color .5s linear;
+                &:focus {
+                    outline: none;
                 }
             }
+        }
+        .medallion {
+            width: 12px;
+            height: 12px;
+            display: block;
+            background: $subtle-grey;
+            position: relative;
+            top: 114px;
+            transform: rotate(45deg);
         }
         .logo-bg {
             width: 0;
@@ -157,7 +203,7 @@
             right: -50px;
         }
 
-        &.transition1 {
+        /*&.transition1 {
 
             .longarrow {
                 transition: $animation-duration transform ease-out, $animation-duration top ease-out, $animation-duration fill ease-out;
@@ -165,8 +211,52 @@
                 top: -70px;
                 fill: orange;
             }
-            .logo-bg {
+        }*/
 
+        &.reduce {
+            height: $header-reduced-height;
+            transition: $animation-duration height ease-out;
+
+            .logo {
+                transform: scale(0.9);
+                margin-top: 10px;
+                transition: $animation-duration transform ease-out, $animation-duration margin-top ease-out;
+            }
+
+            .nav {
+                font-size: $reduced-nav-font-size;
+                transition: $animation-duration font-size ease-out;
+            } 
+
+            &:after {
+                top: 50px;
+                transition: $animation-duration top ease-out;
+            }
+
+            .medallion {
+                transform: rotate(-315deg);
+                transition: $animation-duration transform ease-out, $animation-duration top ease-out;
+                top: 94px;
+            }
+        }
+
+        &.increase {
+            height: $header-height;
+            transition: $animation-duration height ease-out;
+
+            .logo {
+                transform: scale(1);
+                margin-top: 20px;
+                transition: $animation-duration transform ease-out, $animation-duration margin-top ease-out;
+            }
+            .nav {
+                transition: $animation-duration font-size ease-out;
+            }
+             &:after {
+                transition: $animation-duration top ease-out;
+            }
+            .medallion {
+                transition: $animation-duration transform ease-out, $animation-duration top ease-out;
             }
         }
 
@@ -375,13 +465,13 @@
     }
     .logo {
         font-size: $logo-font-size;
+        font-weight: 600;
         margin: 20px 0 0 20px;
         position: relative;
         z-index: 2;
         text-transform: uppercase;
 
         span {
-            font-family: $main-font;
             font-size: $tagline-font-size;
             font-weight: 200;
             margin-top: -10px;
