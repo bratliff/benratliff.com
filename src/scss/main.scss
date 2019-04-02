@@ -1,12 +1,17 @@
 @import "variables";
 
 .br {
+
     background: $white;
     color: black;
     font-family: $main-font;
     font-size: 17px;
     font-weight: 300;
     overflow-x: hidden;
+
+    &.frozen {
+         overflow: hidden;
+    }
 
     .row > div {
         //border: 1px solid #000;
@@ -23,7 +28,7 @@
                 background: $hover-color;
                 height: 1px;
                 width: 0;
-                position: absolute;
+                position: relative;
             }
 
         &:hover {
@@ -36,6 +41,13 @@
                 transition: $hover-duration width ease-out;
             }
 
+        }
+
+        &.no-underline {
+            
+            &:after {
+                display: none;
+            }
         }
     }
     .content {
@@ -74,6 +86,12 @@
             }
         }
     }
+
+    h2 {
+        font-size: $h2-font-size;
+        color: $accent-color;
+    }
+
     p {
         font-weight: 300;
     }
@@ -107,7 +125,7 @@
 
     header {
         background: white;
-        border-bottom: 1px solid $subtle-grey;
+        border-bottom: 1px solid $accent-color;
         color: black;
         display: flex;
         font-family: $header-font;
@@ -771,6 +789,10 @@
             @media (min-width: $desktop-breakpoint) {
                 margin-top: 75px;
             }
+
+            &:before {
+                display: none;
+            }
         }
 
         h4 {
@@ -864,4 +886,6 @@
         background: darkgrey;
         height: 3000px;
     }
+
+    @import "ux";
 }

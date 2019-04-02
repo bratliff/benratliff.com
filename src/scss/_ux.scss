@@ -1,0 +1,63 @@
+// UX Page Styles
+
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    height: 2000px;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    .overlay-content {
+        position: relative;
+        background: white;
+        display: block;
+        height: 80vh;
+        margin-top: 80px;
+        overflow: hidden;
+        overflow-y: scroll;
+        padding: 15px;
+        width: 80%;
+
+        .close-btn {
+            color: white;
+            font-size: 4em;
+            position: fixed;
+            right: 30px;
+            top: 30px;
+            cursor: pointer;
+        }
+
+        h1 {
+            &:before {
+                display: none;
+            }
+
+        }
+    }
+
+    .personas-img {
+        width: 100%;
+    }
+
+    .ux-intro {
+        padding-top: 40px;
+
+        h1 {
+            padding-top: 80px;
+        }
+
+        .plant {
+            background: 0 !important;
+            border: 0 !important;
+            top: -30px;
+            position: absolute;
+        }
+
+        .plant-container {
+            justify-content: flex-end;
+        }
+    }
+}

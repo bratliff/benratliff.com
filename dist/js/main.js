@@ -78,6 +78,16 @@ $(document).ready(function(){
 
             });
 
+            $('.case-study').click(function(){
+                $('.overlay').show(300).css('display', 'flex');
+                $('.br').addClass('frozen');
+            });
+
+            $('.close-btn').click(function(){
+                $('.overlay').hide(300);
+                $('.br').removeClass('frozen');
+            });
+
         },
         webscroll : function() {
             if(!bit_two.developAnim) {
