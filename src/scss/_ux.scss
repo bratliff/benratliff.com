@@ -40,6 +40,15 @@
 
     section {
         height: 460px;
+
+
+        h2 {
+            margin-top: 60px;
+        }
+
+        &:after {
+            display: none;
+        }
     }
 
     .personas-img {
